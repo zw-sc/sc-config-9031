@@ -1,0 +1,29 @@
+server:
+  port: 9031
+spring:
+  application:
+    name: sc-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zw-sc/sc-config-yml.git
+          username: zhaowei201407@164.com
+          password: zw134531
+          search-paths:
+            - sc-config-yml
+      label: master
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  client:
+    service-url:
+      defaultZone: http://euk-server-1:9001/eureka,http://euk-server-2:9002/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
